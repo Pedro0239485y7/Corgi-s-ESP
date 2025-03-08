@@ -1,0 +1,571 @@
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+]=]
+
+-- Instances: 40 | Scripts: 1 | Modules: 0 | Tags: 0
+local G2L = {};
+
+-- StarterGui.ESPGui
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["Name"] = [[ESPGui]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+
+-- StarterGui.ESPGui.ESPFrame
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["Active"] = true;
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(57, 57, 57);
+G2L["2"]["Selectable"] = true;
+G2L["2"]["Size"] = UDim2.new(0.43304, 0, 0.44743, 0);
+G2L["2"]["Position"] = UDim2.new(0.33017, 0, 0.27607, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Visible"] = false;
+G2L["2"]["Name"] = [[ESPFrame]];
+
+
+-- StarterGui.ESPGui.ESPFrame.UICorner
+G2L["3"] = Instance.new("UICorner", G2L["2"]);
+G2L["3"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- StarterGui.ESPGui.ESPFrame.Title
+G2L["4"] = Instance.new("TextLabel", G2L["2"]);
+G2L["4"]["TextWrapped"] = true;
+G2L["4"]["BorderSizePixel"] = 0;
+G2L["4"]["TextSize"] = 45;
+G2L["4"]["TextScaled"] = true;
+G2L["4"]["BackgroundColor3"] = Color3.fromRGB(78, 78, 78);
+G2L["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4"]["Size"] = UDim2.new(0.47077, 0, 0.145, 0);
+G2L["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4"]["Text"] = [[Corgi's ESP]];
+G2L["4"]["Name"] = [[Title]];
+G2L["4"]["Position"] = UDim2.new(0.26462, 0, -0.0825, 0);
+
+
+-- StarterGui.ESPGui.ESPFrame.Title.UICorner
+G2L["5"] = Instance.new("UICorner", G2L["4"]);
+G2L["5"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- StarterGui.ESPGui.ESPFrame.Title.UITextSizeConstraint
+G2L["6"] = Instance.new("UITextSizeConstraint", G2L["4"]);
+G2L["6"]["MaxTextSize"] = 45;
+
+
+-- StarterGui.ESPGui.ESPFrame.Toggle
+G2L["7"] = Instance.new("TextButton", G2L["2"]);
+G2L["7"]["TextWrapped"] = true;
+G2L["7"]["BorderSizePixel"] = 0;
+G2L["7"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7"]["TextSize"] = 45;
+G2L["7"]["TextScaled"] = true;
+G2L["7"]["BackgroundColor3"] = Color3.fromRGB(75, 75, 75);
+G2L["7"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["7"]["Size"] = UDim2.new(0.25077, 0, 0.125, 0);
+G2L["7"]["Name"] = [[Toggle]];
+G2L["7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7"]["Text"] = [[ESP: Off]];
+G2L["7"]["Position"] = UDim2.new(0.06615, 0, 0.195, 0);
+
+
+-- StarterGui.ESPGui.ESPFrame.Toggle.UICorner
+G2L["8"] = Instance.new("UICorner", G2L["7"]);
+G2L["8"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- StarterGui.ESPGui.ESPFrame.Toggle.UITextSizeConstraint
+G2L["9"] = Instance.new("UITextSizeConstraint", G2L["7"]);
+G2L["9"]["MaxTextSize"] = 45;
+
+
+-- StarterGui.ESPGui.ESPFrame.Close
+G2L["a"] = Instance.new("TextButton", G2L["2"]);
+G2L["a"]["TextWrapped"] = true;
+G2L["a"]["BorderSizePixel"] = 0;
+G2L["a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a"]["TextSize"] = 55;
+G2L["a"]["TextScaled"] = true;
+G2L["a"]["BackgroundColor3"] = Color3.fromRGB(255, 81, 84);
+G2L["a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["a"]["Size"] = UDim2.new(0.08, 0, 0.125, 0);
+G2L["a"]["Name"] = [[Close]];
+G2L["a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a"]["Text"] = [[X]];
+G2L["a"]["Position"] = UDim2.new(0.96, 0, -0.0625, 0);
+
+
+-- StarterGui.ESPGui.ESPFrame.Close.UICorner
+G2L["b"] = Instance.new("UICorner", G2L["a"]);
+
+
+
+-- StarterGui.ESPGui.ESPFrame.Close.UITextSizeConstraint
+G2L["c"] = Instance.new("UITextSizeConstraint", G2L["a"]);
+G2L["c"]["MaxTextSize"] = 55;
+
+
+-- StarterGui.ESPGui.ESPFrame.ColorBox
+G2L["d"] = Instance.new("TextLabel", G2L["2"]);
+G2L["d"]["TextWrapped"] = true;
+G2L["d"]["BorderSizePixel"] = 0;
+G2L["d"]["TextSize"] = 30;
+G2L["d"]["TextScaled"] = true;
+G2L["d"]["BackgroundColor3"] = Color3.fromRGB(78, 78, 78);
+G2L["d"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["d"]["Size"] = UDim2.new(0.17385, 0, 0.0875, 0);
+G2L["d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["d"]["Text"] = [[Color]];
+G2L["d"]["Name"] = [[ColorBox]];
+G2L["d"]["Position"] = UDim2.new(0.41385, 0, 0.1575, 0);
+
+
+-- StarterGui.ESPGui.ESPFrame.ColorBox.UICorner
+G2L["e"] = Instance.new("UICorner", G2L["d"]);
+G2L["e"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- StarterGui.ESPGui.ESPFrame.ColorBox.InputBox
+G2L["f"] = Instance.new("TextBox", G2L["d"]);
+G2L["f"]["CursorPosition"] = -1;
+G2L["f"]["Name"] = [[InputBox]];
+G2L["f"]["BorderSizePixel"] = 0;
+G2L["f"]["TextWrapped"] = true;
+G2L["f"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["f"]["TextSize"] = 30;
+G2L["f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["f"]["TextScaled"] = true;
+G2L["f"]["BackgroundColor3"] = Color3.fromRGB(76, 76, 76);
+G2L["f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["f"]["PlaceholderText"] = [[Color]];
+G2L["f"]["Size"] = UDim2.new(0.80531, 0, 1.65714, 0);
+G2L["f"]["Position"] = UDim2.new(0.09735, 0, 1, 0);
+G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["f"]["Text"] = [[Red]];
+
+
+-- StarterGui.ESPGui.ESPFrame.ColorBox.InputBox.UICorner
+G2L["10"] = Instance.new("UICorner", G2L["f"]);
+G2L["10"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- StarterGui.ESPGui.ESPFrame.ColorBox.InputBox.UITextSizeConstraint
+G2L["11"] = Instance.new("UITextSizeConstraint", G2L["f"]);
+G2L["11"]["MaxTextSize"] = 30;
+
+
+-- StarterGui.ESPGui.ESPFrame.ColorBox.UITextSizeConstraint
+G2L["12"] = Instance.new("UITextSizeConstraint", G2L["d"]);
+G2L["12"]["MaxTextSize"] = 30;
+
+
+-- StarterGui.ESPGui.ESPFrame.TransparencyBox
+G2L["13"] = Instance.new("TextLabel", G2L["2"]);
+G2L["13"]["TextWrapped"] = true;
+G2L["13"]["BorderSizePixel"] = 0;
+G2L["13"]["TextSize"] = 20;
+G2L["13"]["TextScaled"] = true;
+G2L["13"]["BackgroundColor3"] = Color3.fromRGB(78, 78, 78);
+G2L["13"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["13"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["13"]["Size"] = UDim2.new(0.17385, 0, 0.0875, 0);
+G2L["13"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["13"]["Text"] = [[Transparency]];
+G2L["13"]["Name"] = [[TransparencyBox]];
+G2L["13"]["Position"] = UDim2.new(0.73538, 0, 0.1575, 0);
+
+
+-- StarterGui.ESPGui.ESPFrame.TransparencyBox.UICorner
+G2L["14"] = Instance.new("UICorner", G2L["13"]);
+G2L["14"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- StarterGui.ESPGui.ESPFrame.TransparencyBox.InputBox
+G2L["15"] = Instance.new("TextBox", G2L["13"]);
+G2L["15"]["CursorPosition"] = -1;
+G2L["15"]["Name"] = [[InputBox]];
+G2L["15"]["BorderSizePixel"] = 0;
+G2L["15"]["TextWrapped"] = true;
+G2L["15"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["15"]["TextSize"] = 15;
+G2L["15"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["15"]["TextScaled"] = true;
+G2L["15"]["BackgroundColor3"] = Color3.fromRGB(76, 76, 76);
+G2L["15"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["15"]["PlaceholderText"] = [[Transparency]];
+G2L["15"]["Size"] = UDim2.new(0.80531, 0, 1.65714, 0);
+G2L["15"]["Position"] = UDim2.new(0.09735, 0, 1, 0);
+G2L["15"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["15"]["Text"] = [[0.5]];
+
+
+-- StarterGui.ESPGui.ESPFrame.TransparencyBox.InputBox.UICorner
+G2L["16"] = Instance.new("UICorner", G2L["15"]);
+G2L["16"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- StarterGui.ESPGui.ESPFrame.TransparencyBox.InputBox.UITextSizeConstraint
+G2L["17"] = Instance.new("UITextSizeConstraint", G2L["15"]);
+G2L["17"]["MaxTextSize"] = 58;
+
+
+-- StarterGui.ESPGui.ESPFrame.TransparencyBox.UITextSizeConstraint
+G2L["18"] = Instance.new("UITextSizeConstraint", G2L["13"]);
+G2L["18"]["MaxTextSize"] = 20;
+
+
+-- StarterGui.ESPGui.ESPFrame.Default
+G2L["19"] = Instance.new("TextButton", G2L["2"]);
+G2L["19"]["TextWrapped"] = true;
+G2L["19"]["BorderSizePixel"] = 0;
+G2L["19"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["19"]["TextSize"] = 23;
+G2L["19"]["TextScaled"] = true;
+G2L["19"]["BackgroundColor3"] = Color3.fromRGB(75, 75, 75);
+G2L["19"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["19"]["Size"] = UDim2.new(0.25077, 0, 0.125, 0);
+G2L["19"]["Name"] = [[Default]];
+G2L["19"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["19"]["Text"] = [[Restore Defaults]];
+G2L["19"]["Position"] = UDim2.new(0.06615, 0, 0.515, 0);
+
+
+-- StarterGui.ESPGui.ESPFrame.Default.UICorner
+G2L["1a"] = Instance.new("UICorner", G2L["19"]);
+G2L["1a"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- StarterGui.ESPGui.ESPFrame.Default.UITextSizeConstraint
+G2L["1b"] = Instance.new("UITextSizeConstraint", G2L["19"]);
+G2L["1b"]["MaxTextSize"] = 23;
+
+
+-- StarterGui.ESPGui.ESPFrame.Lock
+G2L["1c"] = Instance.new("TextButton", G2L["2"]);
+G2L["1c"]["TextWrapped"] = true;
+G2L["1c"]["BorderSizePixel"] = 0;
+G2L["1c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1c"]["TextSize"] = 25;
+G2L["1c"]["TextScaled"] = true;
+G2L["1c"]["BackgroundColor3"] = Color3.fromRGB(75, 75, 75);
+G2L["1c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["1c"]["Size"] = UDim2.new(0.25077, 0, 0.125, 0);
+G2L["1c"]["Name"] = [[Lock]];
+G2L["1c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1c"]["Text"] = [[Lock GUI: False]];
+G2L["1c"]["Position"] = UDim2.new(0.37385, 0, 0.515, 0);
+
+
+-- StarterGui.ESPGui.ESPFrame.Lock.UICorner
+G2L["1d"] = Instance.new("UICorner", G2L["1c"]);
+G2L["1d"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- StarterGui.ESPGui.ESPFrame.Lock.UITextSizeConstraint
+G2L["1e"] = Instance.new("UITextSizeConstraint", G2L["1c"]);
+G2L["1e"]["MaxTextSize"] = 25;
+
+
+-- StarterGui.ESPGui.ESPFrame.Destroy
+G2L["1f"] = Instance.new("TextButton", G2L["2"]);
+G2L["1f"]["TextWrapped"] = true;
+G2L["1f"]["BorderSizePixel"] = 0;
+G2L["1f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1f"]["TextSize"] = 25;
+G2L["1f"]["TextScaled"] = true;
+G2L["1f"]["BackgroundColor3"] = Color3.fromRGB(75, 75, 75);
+G2L["1f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["1f"]["Size"] = UDim2.new(0.25077, 0, 0.125, 0);
+G2L["1f"]["Name"] = [[Destroy]];
+G2L["1f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1f"]["Text"] = [[Destroy GUI]];
+G2L["1f"]["Position"] = UDim2.new(0.69692, 0, 0.515, 0);
+
+
+-- StarterGui.ESPGui.ESPFrame.Destroy.UICorner
+G2L["20"] = Instance.new("UICorner", G2L["1f"]);
+G2L["20"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- StarterGui.ESPGui.ESPFrame.Destroy.UITextSizeConstraint
+G2L["21"] = Instance.new("UITextSizeConstraint", G2L["1f"]);
+G2L["21"]["MaxTextSize"] = 25;
+
+
+-- StarterGui.ESPGui.ESPFrame.HideForLocal
+G2L["22"] = Instance.new("TextButton", G2L["2"]);
+G2L["22"]["TextWrapped"] = true;
+G2L["22"]["BorderSizePixel"] = 0;
+G2L["22"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["22"]["TextSize"] = 17;
+G2L["22"]["TextScaled"] = true;
+G2L["22"]["BackgroundColor3"] = Color3.fromRGB(75, 75, 75);
+G2L["22"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["22"]["Size"] = UDim2.new(0.33385, 0, 0.105, 0);
+G2L["22"]["Name"] = [[HideForLocal]];
+G2L["22"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["22"]["Text"] = [[Hide ESP For You: False]];
+G2L["22"]["Position"] = UDim2.new(0.33231, 0, 0.7375, 0);
+
+
+-- StarterGui.ESPGui.ESPFrame.HideForLocal.UICorner
+G2L["23"] = Instance.new("UICorner", G2L["22"]);
+G2L["23"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- StarterGui.ESPGui.ESPFrame.HideForLocal.UITextSizeConstraint
+G2L["24"] = Instance.new("UITextSizeConstraint", G2L["22"]);
+G2L["24"]["MaxTextSize"] = 17;
+
+
+-- StarterGui.ESPGui.ESPClient
+G2L["25"] = Instance.new("LocalScript", G2L["1"]);
+G2L["25"]["Name"] = [[ESPClient]];
+
+
+-- StarterGui.ESPGui.Open
+G2L["26"] = Instance.new("TextButton", G2L["1"]);
+G2L["26"]["TextWrapped"] = true;
+G2L["26"]["BorderSizePixel"] = 0;
+G2L["26"]["TextColor3"] = Color3.fromRGB(242, 242, 242);
+G2L["26"]["TextSize"] = 35;
+G2L["26"]["TextScaled"] = true;
+G2L["26"]["BackgroundColor3"] = Color3.fromRGB(75, 75, 75);
+G2L["26"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["26"]["Size"] = UDim2.new(0.0966, 0, 0.05034, 0);
+G2L["26"]["Name"] = [[Open]];
+G2L["26"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["26"]["Text"] = [[ESP]];
+G2L["26"]["Position"] = UDim2.new(0.00799, 0, 0.83669, 0);
+
+
+-- StarterGui.ESPGui.Open.UICorner
+G2L["27"] = Instance.new("UICorner", G2L["26"]);
+
+
+
+-- StarterGui.ESPGui.Open.UITextSizeConstraint
+G2L["28"] = Instance.new("UITextSizeConstraint", G2L["26"]);
+G2L["28"]["MaxTextSize"] = 35;
+
+
+-- StarterGui.ESPGui.ESPClient
+local function C_25()
+local script = G2L["25"];
+	local Players = game:GetService("Players")
+	
+	local Player = Players.LocalPlayer
+	
+	local Mouse = Player:GetMouse()
+	
+	local ESPGUI = script.Parent
+	
+	local ESP_FRame = ESPGUI:WaitForChild("ESPFrame")
+	local Open = ESPGUI:WaitForChild("Open")
+	
+	local Toggle = ESP_FRame:WaitForChild("Toggle")
+	local Close = ESP_FRame:WaitForChild("Close")
+	local ColorBox = ESP_FRame:WaitForChild("ColorBox")
+	local TransparencyBox = ESP_FRame:WaitForChild("TransparencyBox")
+	local Default = ESP_FRame:WaitForChild("Default")
+	local Lock = ESP_FRame:WaitForChild("Lock")
+	local Destroy = ESP_FRame:WaitForChild("Destroy")
+	local HideForLocal = ESP_FRame:WaitForChild("HideForLocal")
+	
+	local Colors = {
+		Red = Color3.new(1, 0.294118, 0.305882),
+		Green = Color3.new(0.239216, 1, 0.352941),
+		Blue = Color3.new(0.223529, 0.898039, 1),
+		Pink = Color3.new(0.972549, 0.219608, 1),
+		Black = Color3.new(0, 0, 0),
+		White = Color3.new(1, 1, 1),
+		Orange = Color3.new(1, 0.592157, 0.12549),
+		Purple = Color3.new(0.662745, 0.321569, 1),
+		Yellow = Color3.new(0.921569, 1, 0.235294)
+	}
+	
+	ESP_FRame.Draggable = true
+	
+	-- Bools
+	local ESP = false
+	local Locked = false
+	local HideForLocalPlayer = false
+	
+	Toggle.Activated:Connect(function()
+		if ESP == false then
+			ESP = true
+			Toggle.Text = "ESP: On"
+			for _, player in pairs(Players:GetChildren()) do
+				for _, plrmodel in pairs(workspace:GetChildren()) do
+					if plrmodel.Name == player.Name then
+						for _, plrpart in pairs(plrmodel:GetDescendants()) do
+							if plrpart:IsA("BasePart") or plrpart:IsA("MeshPart") then
+								if plrpart:FindFirstChild("ESP") then
+									plrpart.ESP.Enabled = true
+								else
+									local ESPLight = Instance.new("Highlight", plrpart)
+									ESPLight.Name = "ESP"
+									ESPLight.Enabled = true
+									ESPLight.FillColor = Colors.Red
+								end
+							end
+						end
+					end
+				end
+			end
+		else
+			Toggle.Text = "ESP: Off"
+			ESP = false
+			for _, player in pairs(Players:GetPlayers()) do
+				for _, plrmodel in pairs(workspace:GetChildren()) do
+					if plrmodel.Name == player.Name then
+						for _, plrpart in pairs(plrmodel:GetDescendants()) do
+							for _, plrpart in pairs(plrmodel:GetDescendants()) do
+								if plrpart:IsA("BasePart") or plrpart:IsA("MeshPart") then
+									if plrpart:FindFirstChild("ESP") then
+										plrpart.ESP.Enabled = false
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end)
+	
+	Close.Activated:Connect(function()
+		ESP_FRame.Visible = false
+		Open.Visible = true
+	end)
+	
+	ColorBox.InputBox:GetPropertyChangedSignal("Text"):Connect(function()
+		if Colors[ColorBox.InputBox.Text] then
+			print(true)
+			for _, player in pairs(Players:GetChildren()) do
+				for _, plrmodel in pairs(workspace:GetChildren()) do
+					if plrmodel.Name == player.Name then
+						for _, plrpart in pairs(plrmodel:GetDescendants()) do
+							if plrpart:IsA("MeshPart") or plrpart:IsA("BasePart") then
+								if plrpart:FindFirstChild("ESP") then
+									plrpart.ESP.FillColor = Colors[ColorBox.InputBox.Text]
+								else
+									print("False")
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end)
+	
+	TransparencyBox.InputBox:GetPropertyChangedSignal("Text"):Connect(function()
+		for _, player in pairs(Players:GetChildren()) do
+			for _, plrmodel in pairs(workspace:GetChildren()) do
+				if plrmodel.Name == player.Name then
+					for _, plrpart in pairs(plrmodel:GetDescendants()) do
+						if plrpart:IsA("MeshPart") or plrpart:IsA("BasePart") then
+							if plrpart:FindFirstChild("ESP") then
+								plrpart.ESP.FillTransparency = TransparencyBox.InputBox.Text
+							end 
+						end 
+					end 
+				end 
+			end 
+		end
+	end)
+	
+	Open.Activated:Connect(function()
+		ESP_FRame.Visible = true
+		Open.Visible = false
+	end)
+	
+	Default.Activated:Connect(function()
+		for _, plr in pairs(game.Players:GetChildren()) do
+			for _, plrmodel in pairs(workspace:GetChildren()) do
+				if plrmodel.Name == plr.Name then
+					for _, plrpart in pairs(plrmodel:GetDescendants()) do
+						if plrpart:IsA("BasePart") or plrpart:IsA("MeshPart") then
+							if plrpart:FindFirstChild("ESP") then
+								plrpart.ESP.FillColor = Colors.Red
+								plrpart.ESP.FillTransparency = 0.5
+								TransparencyBox.InputBox.Text = "0.5"
+								ColorBox.InputBox.Text = "Red"
+							end
+						end
+					end
+				end
+			end
+		end
+	end)
+	
+	Lock.Activated:Connect(function()
+		if Locked == true then
+			Locked = false
+			ESP_FRame.Draggable = true
+			Lock.Text = "Lock GUI: False"
+		else
+			Locked = true
+			ESP_FRame.Draggable = false
+			Lock.Text = "Lock GUI: True"
+		end
+	end)
+	
+	Destroy.Activated:Connect(function()
+		ESPGUI:Destroy()
+	end)
+	
+	HideForLocal.Activated:Connect(function()
+		if HideForLocalPlayer == true then
+			for _, lcalplrpart in pairs(Player.Character:GetDescendants()) do
+				if lcalplrpart:IsA("MeshPart") or lcalplrpart:IsA("BasePart") then
+					if lcalplrpart:FindFirstChild("ESP") then
+						if ESP == true then
+							HideForLocalPlayer = false
+							HideForLocal.Text = "Hide ESP For You: False"
+							lcalplrpart.ESP.Enabled = true
+						end
+					end
+				end
+			end
+		else
+			for _, lcalplrpart in pairs(Player.Character:GetDescendants()) do
+				if lcalplrpart:IsA("MeshPart") or lcalplrpart:IsA("BasePart") then
+					print(lcalplrpart)
+					if lcalplrpart:FindFirstChild("ESP") then
+						if ESP == true then
+							HideForLocalPlayer = true
+							HideForLocal.Text = "Hide ESP For You: True"
+							lcalplrpart.ESP.Enabled = false
+						end
+					end
+				end
+			end
+		end
+	end)
+	
+	Players.PlayerAdded:Connect(function(player)
+		player.CharacterAdded:Connect(function(character)
+			for _, plrpart in pairs(character:GetDescendants()) do
+				if plrpart:IsA("BasePart") or plrpart:IsA("MeshPart") then
+					local ESPLight = Instance.new("Highlight", plrpart)
+					ESPLight.Name = "ESP"
+					ESPLight.Enabled = true
+					ESPLight.FillColor = Colors.Red
+				end
+			end
+		end)
+	end)
+end;
+task.spawn(C_25);
+
+return G2L["1"], require;
